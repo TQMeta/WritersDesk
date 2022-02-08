@@ -13,5 +13,11 @@ namespace WritersDesk
     /// </summary>
     public partial class App : Application
     {
+
+        public App()
+        {
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("NTc4NTc5QDMxMzkyZTM0MmUzMGJVY3F4NnY1cDd4dGNrdWRvdis0VG5SNnBNM2RoQUJNTjU4THlpZGpmSkE9");
+        }
+
     }
 }

@@ -1,12 +1,15 @@
-﻿<Window x:Class="WritersDesk.MainWindow"
+﻿<syncfusion:RibbonWindow 
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:syncfusion="http://schemas.syncfusion.com/wpf" x:Class="WritersDesk.MainWindow"
+        xmlns:syncfusionskin="clr-namespace:Syncfusion.SfSkinManager;assembly=Syncfusion.SfSkinManager.WPF"
+        syncfusionskin:SfSkinManager.VisualStyle="FluentDark"
         xmlns:local="clr-namespace:WritersDesk"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-
+        <syncfusion:Ribbon x:Name="_ribbon" />
     </Grid>
-</Window>
+</syncfusion:RibbonWindow>
