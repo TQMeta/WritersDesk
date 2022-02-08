@@ -8,8 +8,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Assets\Ribbon\icon.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\Ribbon\icon.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Syncfusion.Licensing" Version="19.4.0.50" />
     <PackageReference Include="Syncfusion.SfSkinManager.WPF" Version="19.4.0.50" />
+    <PackageReference Include="Syncfusion.Shared.WPF" Version="19.4.0.50" />
     <PackageReference Include="Syncfusion.Themes.Blend.WPF" Version="19.4.0.50" />
     <PackageReference Include="Syncfusion.Themes.FluentDark.WPF" Version="19.4.0.50" />
     <PackageReference Include="Syncfusion.Themes.FluentLight.WPF" Version="19.4.0.50" />

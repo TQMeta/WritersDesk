@@ -8,8 +8,62 @@
         syncfusionskin:SfSkinManager.VisualStyle="FluentDark"
         xmlns:local="clr-namespace:WritersDesk"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <syncfusion:Ribbon x:Name="_ribbon" />
+        Title="WritersDesk" Height="450" Width="800"
+        Office2010Icon="Assets/Ribbon/icon.png">
+    <Grid ShowGridLines="False">
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <syncfusion:Ribbon Grid.Row="0" x:Name="_ribbon" VerticalAlignment="Top">
+
+            <syncfusion:RibbonTab Caption="HOME" IsChecked="True"></syncfusion:RibbonTab>
+            <syncfusion:RibbonTab Caption="SEND/RECEIVE" IsChecked="False"></syncfusion:RibbonTab>
+            <syncfusion:RibbonTab Caption="FOLDER" IsChecked="False"></syncfusion:RibbonTab>
+            <syncfusion:RibbonTab Caption="VIEW" IsChecked="False"></syncfusion:RibbonTab>
+
+        </syncfusion:Ribbon>
+
+        <syncfusion:DockingManager Grid.Row="1" x:Name="dockingManager">
+
+            <ContentControl x:Name="SolutionExplorer" 
+                            syncfusion:DockingManager.DesiredWidthInDockedMode="180" 
+                            syncfusion:DockingManager.Header="Solution Explorer"
+                            syncfusion:DockingManager.State="Dock"
+                            syncfusion:DockingManager.SideInDockedMode="Left"
+            />
+
+            <ContentControl x:Name="ToolBox"  
+                            syncfusion:DockingManager.DesiredWidthInDockedMode="110" 
+                            syncfusion:DockingManager.Header="ToolBox"
+                            syncfusion:DockingManager.State="Dock"
+                            syncfusion:DockingManager.SideInDockedMode="Tabbed"
+                            syncfusion:DockingManager.TargetNameInDockedMode="SolutionExplorer"
+            />
+
+            <ContentControl x:Name="Properties"  
+                            syncfusion:DockingManager.DesiredWidthInDockedMode="180" 
+                            syncfusion:DockingManager.Header="Properties"
+                            syncfusion:DockingManager.State="Dock"
+                            syncfusion:DockingManager.SideInDockedMode="Right"
+                            
+            />
+
+            <ContentControl x:Name="Output"  
+                            syncfusion:DockingManager.Header="Output"
+                            syncfusion:DockingManager.State="Dock"
+                            syncfusion:DockingManager.SideInDockedMode="Bottom"
+            />
+
+            <ContentControl x:Name="StartPage"  
+                            syncfusion:DockingManager.DesiredWidthInDockedMode="180" 
+                            syncfusion:DockingManager.Header="StartPage"
+                            syncfusion:DockingManager.State="Document"
+            />
+
+        </syncfusion:DockingManager>
+
     </Grid>
 </syncfusion:RibbonWindow>
