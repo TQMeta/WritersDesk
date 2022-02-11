@@ -8,8 +8,9 @@
         syncfusionskin:SfSkinManager.VisualStyle="FluentDark"
         xmlns:local="clr-namespace:WritersDesk"
         xmlns:collections="clr-namespace:System.Collections;assembly=System.Runtime"
+        xmlns:wv2="clr-namespace:Microsoft.Web.WebView2.Wpf;assembly=Microsoft.Web.WebView2.Wpf"
         mc:Ignorable="d"
-        Title="WritersDesk" Height="450" Width="800"
+        Title="WritersDesk" Height="866" Width="1425"
         Office2010Icon="Assets/Ribbon/icon.png">
 
 
@@ -40,7 +41,7 @@
 
 
     <Grid ShowGridLines="False">
-        
+
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
@@ -114,22 +115,22 @@
             </syncfusion:Ribbon.QuickAccessToolBar>
             <syncfusion:Ribbon.BackStage>
                 <syncfusion:Backstage>
-                <syncfusion:BackstageTabItem  Header="Info">
-                    <StackPanel>
-                        <TextBlock FontSize="20" Margin="10" Text="Account Information"/>
-                        <TextBlock FontSize="12" Margin="10" Text="Employ1@syncfusion.com"/>
-                    </StackPanel>
-                </syncfusion:BackstageTabItem>
-                <syncfusion:BackstageTabItem  Header="Open"/>
-                <syncfusion:BackStageCommandButton Header="Save" />
-                <syncfusion:BackStageCommandButton Header="SaveAs" />
-                <syncfusion:BackStageSeparator/>
-                <syncfusion:BackstageTabItem  Header="Print"/>
-                <syncfusion:BackstageTabItem  Header="Share"/>
-                <syncfusion:BackStageSeparator Position="Bottom"/>
-                <syncfusion:BackstageTabItem Position="Bottom" Header="Options"/>
-                <syncfusion:BackStageCommandButton Position="Bottom" Header="Feedback" />
-                <syncfusion:BackStageCommandButton Position="Bottom" Header="Exit" />
+                    <syncfusion:BackstageTabItem  Header="Info">
+                        <StackPanel>
+                            <TextBlock FontSize="20" Margin="10" Text="Account Information"/>
+                            <TextBlock FontSize="12" Margin="10" Text="Employ1@syncfusion.com"/>
+                        </StackPanel>
+                    </syncfusion:BackstageTabItem>
+                    <syncfusion:BackstageTabItem  Header="Open"/>
+                    <syncfusion:BackStageCommandButton Header="Save" />
+                    <syncfusion:BackStageCommandButton Header="SaveAs" />
+                    <syncfusion:BackStageSeparator/>
+                    <syncfusion:BackstageTabItem  Header="Print"/>
+                    <syncfusion:BackstageTabItem  Header="Share"/>
+                    <syncfusion:BackStageSeparator Position="Bottom"/>
+                    <syncfusion:BackstageTabItem Position="Bottom" Header="Options"/>
+                    <syncfusion:BackStageCommandButton Position="Bottom" Header="Feedback" />
+                    <syncfusion:BackStageCommandButton Position="Bottom" Header="Exit" />
                 </syncfusion:Backstage>
             </syncfusion:Ribbon.BackStage>
 
@@ -170,7 +171,11 @@
                             syncfusion:DockingManager.DesiredWidthInDockedMode="180" 
                             syncfusion:DockingManager.Header="StartPage"
                             syncfusion:DockingManager.State="Document"
-            />
+            >
+
+                <wv2:WebView2 Name="webView" Source="https://www.microsoft.com"/>
+
+            </ContentControl>
 
         </syncfusion:DockingManager>
 
@@ -181,7 +186,7 @@
             </StatusBarItem>
             <StatusBarItem>
                 <ProgressBar Width="100" Height="20"
-                             Name="progressBar1">
+                             Name="progressBar1" Foreground="#FF00D420">
                     <ProgressBar.Triggers>
                         <EventTrigger RoutedEvent="ProgressBar.Loaded">
                             <BeginStoryboard>
