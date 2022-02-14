@@ -1,8 +1,6 @@
 ﻿using System.Windows;
 using Syncfusion.Windows.Tools.Controls;
 
-using Microsoft.Web.WebView2.Core;
-
 namespace WritersDesk
 {
     /// <summary>
@@ -13,6 +11,7 @@ namespace WritersDesk
         public MainWindow()
         {
             InitializeComponent();
+
         }
 
         private void ButtonGo_Click(object sender, RoutedEventArgs e)
