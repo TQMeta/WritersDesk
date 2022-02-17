@@ -53,7 +53,7 @@
         <syncfusion:Ribbon Grid.Row="0" x:Name="_ribbon" VerticalAlignment="Top">
 
             <syncfusion:RibbonTab Caption="HOME"  IsChecked="True">
-                <syncfusion:RibbonBar Name="New" Width="90"  Header="New">
+                <syncfusion:RibbonBar Name="New" Width="90"  Header="New" >
                     <syncfusion:RibbonButton SizeForm="Large" Label="New Email"/>
                     <syncfusion:DropDownButton SizeForm="Large" Label="New Items">
                         <syncfusion:DropDownMenuItem Header="E-mail Message"/>
@@ -123,9 +123,16 @@
                             <TextBlock FontSize="12" Margin="10" Text="Employ1@syncfusion.com"/>
                         </StackPanel>
                     </syncfusion:BackstageTabItem>
+                    <syncfusion:BackstageTabItem  Header="New">
+                        <syncfusion:WizardControl Name="WizardControl" SelectedWizardPage="{Binding ElementName=wizard2}" Foreground="SlateBlue">
+                            <syncfusion:WizardPage Title="Wizard Page1" x:Name="wizard1"/>
+                            <syncfusion:WizardPage Title="Wizard Page2" x:Name="wizard2"/>
+                            <syncfusion:WizardPage Title="Wizard Page3" x:Name="wizard3"/>
+                        </syncfusion:WizardControl>
+                    </syncfusion:BackstageTabItem>
                     <syncfusion:BackstageTabItem  Header="Open"/>
                     <syncfusion:BackStageCommandButton Header="Save" />
-                    <syncfusion:BackStageCommandButton Header="SaveAs" />
+                    <syncfusion:BackStageCommandButton Header="SaveAs" Command="{Binding SaveAsCommand}" />
                     <syncfusion:BackStageSeparator/>
                     <syncfusion:BackstageTabItem  Header="Print"/>
                     <syncfusion:BackstageTabItem  Header="Share"/>
@@ -215,7 +222,7 @@
 
             <ContentControl x:Name="StartPage"  
                             syncfusion:DockingManager.DesiredWidthInDockedMode="180" 
-                            syncfusion:DockingManager.Header="StartPage"
+                            syncfusion:DockingManager.Header="MapGenerator"
                             syncfusion:DockingManager.State="Document"
             >
 

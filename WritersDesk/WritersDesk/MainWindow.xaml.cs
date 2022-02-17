@@ -34,5 +34,7 @@ namespace WritersDesk
                 webView.CoreWebView2.Navigate(addressBar.Text);
             }
         }
+
+        
     }
 }

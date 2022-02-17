@@ -37,4 +37,8 @@
     <ProjectReference Include="..\WritersDesk.Tools.NameGenerator\WritersDesk.Tools.NameGenerator.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Views\" />
+  </ItemGroup>
+
 </Project>
