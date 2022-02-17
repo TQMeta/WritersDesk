@@ -6,6 +6,8 @@
         xmlns:syncfusion="http://schemas.syncfusion.com/wpf" x:Class="WritersDesk.MainWindow"
         xmlns:syncfusionskin="clr-namespace:Syncfusion.SfSkinManager;assembly=Syncfusion.SfSkinManager.WPF"
         syncfusionskin:SfSkinManager.VisualStyle="FluentDark"
+        xmlns:Engine="clr-namespace:Syncfusion.UI.Xaml.TreeView.Engine;assembly=Syncfusion.SfTreeView.WPF"
+        xmlns:RichTextBoxAdv="clr-namespace:Syncfusion.Windows.Controls.RichTextBoxAdv;assembly=Syncfusion.SfRichTextBoxAdv.Wpf"
         xmlns:local="clr-namespace:WritersDesk"
         xmlns:collections="clr-namespace:System.Collections;assembly=System.Runtime"
         xmlns:wv2="clr-namespace:Microsoft.Web.WebView2.Wpf;assembly=Microsoft.Web.WebView2.Wpf"
@@ -143,7 +145,51 @@
                             syncfusion:DockingManager.Header="Solution Explorer"
                             syncfusion:DockingManager.State="Dock"
                             syncfusion:DockingManager.SideInDockedMode="Left"
-            />
+            >
+
+                <syncfusion:SfTreeView>
+                    <syncfusion:SfTreeView.Nodes>
+                        <Engine:TreeViewNode Content="Grains" IsExpanded="True">
+                            <Engine:TreeViewNode.ChildNodes>
+                                <Engine:TreeViewNode Content="Cereals" IsExpanded="True">
+                                    <Engine:TreeViewNode.ChildNodes>
+                                        <Engine:TreeViewNode Content="Rice"/>
+                                        <Engine:TreeViewNode Content="Barley"/>
+                                    </Engine:TreeViewNode.ChildNodes>
+                                </Engine:TreeViewNode>
+                                <Engine:TreeViewNode Content="Oilseeds">
+                                    <Engine:TreeViewNode.ChildNodes>
+                                        <Engine:TreeViewNode Content="Safflower"/>
+                                    </Engine:TreeViewNode.ChildNodes>
+                                </Engine:TreeViewNode>
+                            </Engine:TreeViewNode.ChildNodes>
+                        </Engine:TreeViewNode>
+                        <Engine:TreeViewNode Content="Fruits" IsExpanded="true">
+                            <Engine:TreeViewNode.ChildNodes>
+                                <Engine:TreeViewNode Content="Orange"/>
+                                <Engine:TreeViewNode Content="Apples" IsExpanded="true"/>
+                            </Engine:TreeViewNode.ChildNodes>
+                        </Engine:TreeViewNode>
+                        <Engine:TreeViewNode Content="Vegetables" IsExpanded="true">
+                            <Engine:TreeViewNode.ChildNodes>
+                                <Engine:TreeViewNode Content="Root Vegetables" IsExpanded="true">
+                                    <Engine:TreeViewNode.ChildNodes>
+                                        <Engine:TreeViewNode Content="Potato"/>
+                                        <Engine:TreeViewNode Content="Carrot"/>
+                                    </Engine:TreeViewNode.ChildNodes>
+                                </Engine:TreeViewNode>
+                                <Engine:TreeViewNode Content="Podded">
+                                    <Engine:TreeViewNode.ChildNodes>
+                                        <Engine:TreeViewNode Content="Peanut"/>
+                                        <Engine:TreeViewNode Content="Lentil"/>
+                                    </Engine:TreeViewNode.ChildNodes>
+                                </Engine:TreeViewNode>
+                            </Engine:TreeViewNode.ChildNodes>
+                        </Engine:TreeViewNode>
+                    </syncfusion:SfTreeView.Nodes>
+                </syncfusion:SfTreeView>
+
+            </ContentControl>
 
             <ContentControl x:Name="ToolBox"  
                             syncfusion:DockingManager.DesiredWidthInDockedMode="110" 
@@ -179,9 +225,29 @@
                         <TextBox Name = "addressBar"/>
                     </DockPanel>
                     <wv2:WebView2 Name = "webView"
-                                  Source = "https://azgaar.github.io/Fantasy-Map-Generator/"
+                                  Source = "https://localhost:7022/sites/mapgenerator/index.html"
                     />
                 </DockPanel> 
+
+            </ContentControl>
+
+            <ContentControl x:Name="EditorPage1"  
+                            syncfusion:DockingManager.DesiredWidthInDockedMode="180" 
+                            syncfusion:DockingManager.Header="StartPage"
+                            syncfusion:DockingManager.State="Document"
+            >
+
+                <RichTextBoxAdv:SfRichTextBoxAdv x:Name="richTextBoxAdv" />
+
+            </ContentControl>
+
+            <ContentControl x:Name="EditorPage2"  
+                            syncfusion:DockingManager.DesiredWidthInDockedMode="180" 
+                            syncfusion:DockingManager.Header="StartPage"
+                            syncfusion:DockingManager.State="Document"
+            >
+
+               
 
             </ContentControl>
 
