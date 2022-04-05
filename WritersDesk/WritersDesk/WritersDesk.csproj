@@ -35,6 +35,7 @@
     <ProjectReference Include="..\WritersDesk.Core\WritersDesk.Core.csproj" />
     <ProjectReference Include="..\WritersDesk.Data.Models\WritersDesk.Data.Models.csproj" />
     <ProjectReference Include="..\WritersDesk.Tools.NameGenerator\WritersDesk.Tools.NameGenerator.csproj" />
+    <ProjectReference Include="..\WritersDesk.UserControls\WritersDesk.UserControls.csproj" />
   </ItemGroup>
 
   <ItemGroup>

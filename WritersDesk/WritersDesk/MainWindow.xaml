@@ -8,7 +8,8 @@
         syncfusionskin:SfSkinManager.VisualStyle="FluentDark"
         xmlns:Engine="clr-namespace:Syncfusion.UI.Xaml.TreeView.Engine;assembly=Syncfusion.SfTreeView.WPF"
         xmlns:RichTextBoxAdv="clr-namespace:Syncfusion.Windows.Controls.RichTextBoxAdv;assembly=Syncfusion.SfRichTextBoxAdv.Wpf"
-        xmlns:local="clr-namespace:WritersDesk"
+        xmlns:WDeskWeb="clr-namespace:WritersDesk.UserControls.Web;assembly=WritersDesk.UserControls"
+        xmlns:wdesk="clr-namespace:WritersDesk"
         xmlns:collections="clr-namespace:System.Collections;assembly=System.Runtime"
         xmlns:wv2="clr-namespace:Microsoft.Web.WebView2.Wpf;assembly=Microsoft.Web.WebView2.Wpf"
         mc:Ignorable="d"
@@ -40,8 +41,6 @@
         </collections:ArrayList>
     </syncfusion:RibbonWindow.HeaderItemsSource>
 
-
-
     <Grid ShowGridLines="False">
 
         <Grid.RowDefinitions>
@@ -50,7 +49,9 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <syncfusion:Ribbon Grid.Row="0" x:Name="_ribbon" VerticalAlignment="Top">
+        
+
+                <syncfusion:Ribbon Grid.Row="0" x:Name="_ribbon" VerticalAlignment="Top">
 
             <syncfusion:RibbonTab Caption="HOME"  IsChecked="True">
                 <syncfusion:RibbonBar Name="New" Width="90"  Header="New" >
@@ -99,8 +100,15 @@
                     </syncfusion:RibbonComboBox>
                 </syncfusion:RibbonBar>
             </syncfusion:RibbonTab>
-            <syncfusion:RibbonTab Caption="SEND/RCEIVE"  IsChecked="False"/>
-            <syncfusion:RibbonTab Caption="FOLDER"  IsChecked="False"/>
+            <syncfusion:RibbonTab Caption="World Builder"  IsChecked="False">
+
+                <syncfusion:RibbonBar Name="Maps" Width="200" Header="Maps">
+                    <syncfusion:RibbonButton Label="Vew Map" SizeForm="Large" Click="NewMap_OnClick"/>
+                    <syncfusion:RibbonButton Label="Open Map" SizeForm="Large" />
+                </syncfusion:RibbonBar>
+
+            </syncfusion:RibbonTab>
+            <syncfusion:RibbonTab Caption="Resources"  IsChecked="False"/>
             <syncfusion:RibbonTab Caption="VIEW"  IsChecked="False"/>
             <syncfusion:Ribbon.QuickAccessToolBar>
                 <syncfusion:QuickAccessToolBar>
@@ -145,7 +153,8 @@
 
         </syncfusion:Ribbon>
 
-        <syncfusion:DockingManager Grid.Row="1" x:Name="dockingManager">
+        <syncfusion:DockingManager Grid.Row="1" x:Name="DockingManager" UseDocumentContainer="True"
+                                   EnableDocumentTabHeaderEdit="True" >
 
             <ContentControl x:Name="SolutionExplorer" 
                             syncfusion:DockingManager.DesiredWidthInDockedMode="180" 
@@ -219,24 +228,6 @@
                             syncfusion:DockingManager.State="Dock"
                             syncfusion:DockingManager.SideInDockedMode="Bottom"
             />
-
-            <ContentControl x:Name="StartPage"  
-                            syncfusion:DockingManager.DesiredWidthInDockedMode="180" 
-                            syncfusion:DockingManager.Header="MapGenerator"
-                            syncfusion:DockingManager.State="Document"
-            >
-
-                <DockPanel>
-                    <DockPanel DockPanel.Dock="Top">
-                        <Button x:Name="ButtonGo" DockPanel.Dock="Right" Click="ButtonGo_Click" Content="Go"/>
-                        <TextBox Name = "addressBar"/>
-                    </DockPanel>
-                    <wv2:WebView2 Name = "webView"
-                                  Source = "https://localhost:7022/sites/mapgenerator/index.html"
-                    />
-                </DockPanel> 
-
-            </ContentControl>
 
             <ContentControl x:Name="EditorPage1"  
                             syncfusion:DockingManager.DesiredWidthInDockedMode="180" 
